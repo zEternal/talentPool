@@ -7,6 +7,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="talentPool" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/libs/json-20190722.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/libs/mysql-connector-java-5.1.47-bin.jar" />
+        </element>
       </element>
     </root>
   </artifact>

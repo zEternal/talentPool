@@ -23,8 +23,13 @@ public class RegisterServlet extends HttpServlet {
         response.setContentType("text/html,charset=utf-8");
 
         System.out.println("进入注册servlet");
-        String data = request.getParameter("data");
-        //System.out.println("接收前台数据：" + data);
+        /*******简易接收*******/
+        String userName = request.getParameter("username");
+        String password = request.getParameter("password");
+        /***************/
+
+        /******json接收********/
+        /*String data = request.getParameter("data");
         String userName = null;
         String password = null;
         try {
@@ -35,7 +40,8 @@ public class RegisterServlet extends HttpServlet {
         } catch (JSONException e) {
             System.out.println("json 解析异常");
             e.printStackTrace();
-        }
+        }*/
+        /****************************************/
         int role = 1;//1 普通用户  2 操作员  3 超级管理员
         int statu = 0;  //1 注册成功      0 注册失败
         LoginT loginT = new LoginT(userName,password,role);

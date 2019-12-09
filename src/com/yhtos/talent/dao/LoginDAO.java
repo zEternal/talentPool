@@ -40,5 +40,11 @@ public interface LoginDAO {
      */
     LoginT selectLogin(String userName, String password);
 
+    /**
+     * 查询多条数据
+     * @param userName
+     * @param password
+     * @return
+     */
     List<LoginT> selectLoginMany(String userName, String password);
 }

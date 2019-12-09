@@ -75,6 +75,7 @@ public class DBUtil {
                 e.printStackTrace();
             }
         }
+        System.out.println("关闭数据库成功");
     }
 
     /**
@@ -90,6 +91,7 @@ public class DBUtil {
         try {
             pstmt = conn.prepareStatement(sql);
             i = pstmt.executeUpdate();
+            System.out.println("执行完毕sql");
             DBUtil.closeJDBC(null, pstmt, conn);
         } catch (Exception e) {
             // TODO: handle exception

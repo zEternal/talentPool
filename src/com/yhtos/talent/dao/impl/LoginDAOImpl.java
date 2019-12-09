@@ -21,7 +21,7 @@ public class LoginDAOImpl implements LoginDAO {
     public int addLogin(LoginT loginT) {
         int statusCode = 0;//状态码
 
-        String sql = "insert into tb_user (username,pw,role) " +
+        String sql = "insert into tb_user (username,password,role) " +
                 "value('"+loginT.getUsername()+"','"+loginT.getPassword()+"','"+loginT.getRole() +"')";
         int n = DBUtil.change(sql);
         if(n > 0){
