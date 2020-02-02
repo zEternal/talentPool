@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script>
+            function uploadTrainProduct() {
+                var formData = new FormData($("#from-pro")[0]);  //重点：要用这种方法接收表单的参数
+                $.ajax({
+                    url: "ImageInsertServlet",
+                    type: 'POST',
+                    data: formData,
+                    // 告诉jQuery不要去处理发送的数据
+                    processData: false,
+                    // 告诉jQuery不要去设置Content-Type请求头
+                    contentType: false,
+                    async: false,
+                    success: function (data) {
+                        if (data) {
+                        }
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <form id="from-pro"  enctype="multipart/form-data" method="post" >
+            头像：<input type="file" id="avatar" name="avatar"/>
+            头像：<input type="file" id="idPositive" name="idPositive"/>
+            头像：<input type="file" id="idReverse" name="idReverse"/>
+            头像：<input type="file" id="jobCertifi" name="jobCertifi"/>
+            头像：<input type="file" id="other1" name="other1"/>
+            头像：<input type="file" id="other2" name="other2"/>
+
+            <input type="button" value="提交" id="sender" onclick="uploadTrainProduct()">
+        </form>
+    </body>
+</html>

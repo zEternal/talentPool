@@ -12,6 +12,9 @@ import java.util.Map;
 
 public class LoginDAOImpl implements LoginDAO {
 
+    public void showww(){
+        System.out.println("222");
+    }
     /**
      * 功能：将注册信息插入数据库
      * @param loginT 数据表映射对象

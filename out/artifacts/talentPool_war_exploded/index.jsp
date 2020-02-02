@@ -18,6 +18,7 @@
     <input type="button" value="提交" id="sender">
   </form>
   <div id="messageDiv"></div>
+    <a href="tutu.html">上传照片</a>
 
   <script>
     $('#sender').click(function () {

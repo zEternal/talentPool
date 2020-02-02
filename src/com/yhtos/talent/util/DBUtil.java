@@ -3,6 +3,7 @@ package com.yhtos.talent.util;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -99,6 +100,28 @@ public class DBUtil {
 
         return i;
     }
+
+    public static int executeUpdate(String sql, List<Object> params) {
+        int result = 0;
+
+        conn = DBUtil.getConnection();
+        pstmt = null;
+        try {
+            pstmt = conn.prepareStatement(sql);
+            for (int i = 0; i < params.size(); i++) {
+                pstmt.setObject(i + 1, params.get(i));
+            }
+            result = pstmt.executeUpdate();
+            System.out.println("执行完毕sql");
+            DBUtil.closeJDBC(null, pstmt, conn);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
+        return result;
+    }
+
+
 
     /**
      * 功能：查询

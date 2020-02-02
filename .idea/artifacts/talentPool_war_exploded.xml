@@ -10,6 +10,8 @@
         <element id="directory" name="lib">
           <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/libs/json-20190722.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/libs/mysql-connector-java-5.1.47-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/libs/commons-io-2.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/libs/commons-fileupload-1.3.1.jar" />
         </element>
       </element>
     </root>
