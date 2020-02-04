@@ -5,10 +5,12 @@ import com.yhtos.talent.bean.UsersInfoT;
 import com.yhtos.talent.dao.UserDAO;
 import com.yhtos.talent.util.DBUtil;
 
+import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 类名：UsersInfoDAOImpl
@@ -30,13 +32,19 @@ public class UsersInfoDAOImpl implements UserDAO<UsersInfoT> {
         //63-74 资格证书
         //75-82 家庭成员
         //83当前日期
-        String sql = "insert into tb_userInfo (?,?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?," +
+        /**String sql = "insert into tb_userInfo_all (null,?,?,?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,     null,null,null,null,null,null,     ?,?,?,?,?,?,?," +
                 "?,?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?," +
-                "?,?,?,?,?,?,?,?,?,?,?)";
+                "?,?,?,?,?,?,?,?,?,?,?)";*/
+
+
+        String sql = "insert into tb_userInfo_all values(null,?,?,?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,   ?,?,?,?,?,?,    " +
+                "?,?,?,?,?,?,?,?,?,?,?,?,   ?,?,?,?,?,?,?,?,?,?,?,?, null,null,null,null,null,null,null,null,null,null,null,null," +
+                "?,?,?,?,?,?,?,?,?,?,?,?,   ?,?,?,?,?,?,?,?,?,?,?,?,  ?,?,?,?,?,?,?,?,  ?)";
         List<Object> params=new ArrayList<Object>();
         {
             params.add(usersInfoT.getUsername());
             params.add(usersInfoT.getName());
+            params.add(usersInfoT.getBirthday());/**/
             params.add(usersInfoT.getSex());
             params.add(usersInfoT.getIdCard());
             params.add(usersInfoT.getNation());
@@ -86,7 +94,7 @@ public class UsersInfoDAOImpl implements UserDAO<UsersInfoT> {
         params.add(usersInfoT.getPost2());
         params.add(usersInfoT.getLeaving2());
         params.add(usersInfoT.getWitPhone2());
-        params.add(usersInfoT.getWorkStartDate3());
+        /*params.add(usersInfoT.getWorkStartDate3());
         params.add(usersInfoT.getWorkEndDate3());
         params.add(usersInfoT.getWorkUnit3());
         params.add(usersInfoT.getPost3());
@@ -97,7 +105,7 @@ public class UsersInfoDAOImpl implements UserDAO<UsersInfoT> {
         params.add(usersInfoT.getWorkUnit4());
         params.add(usersInfoT.getPost4());
         params.add(usersInfoT.getLeaving4());
-        params.add(usersInfoT.getWitPhone4());
+        params.add(usersInfoT.getWitPhone4());*/
 
         //53-62
         params.add(usersInfoT.getTrainDate1());
@@ -135,11 +143,38 @@ public class UsersInfoDAOImpl implements UserDAO<UsersInfoT> {
         params.add(usersInfoT.getFamilyName2());
         params.add(usersInfoT.getFamilyPhone2());
         params.add(usersInfoT.getFamilyWorkUnit2());
+        Date date=new Date();   //这里的时util包下的
+        SimpleDateFormat temp=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  //这是24时
+        String Date=temp.format(date);
+        params.add(Date);
 
-        params.add(new Date());
+        try {
+            statusCode = DBUtil.executeUpdate(sql,params);
+            System.out.println("！！！");
+        } catch (Exception e) {
+            System.out.println("数据插入异常！！！");
+            e.printStackTrace();
+        }
+
+        return statusCode;
+    }
+
+
+    public int imgSave(Map map,String username){
+        int statusCode = 0;//状态码
+
+        String sql = "update tb_userInfo_all set avatar=?,idPositive=?,idReverse=?,jobCertifi=?,other1=?,other2=? where " +
+                "username=?";
+        List<Object> params=new ArrayList<Object>();
+        params.add(map.get("avatar"));
+        params.add(map.get("idPositive"));
+        params.add(map.get("idReverse"));
+        params.add(map.get("jobCertifi"));
+        params.add(map.get("other1"));
+        params.add(map.get("other2"));
+        params.add(username);
 
         statusCode = DBUtil.executeUpdate(sql,params);
-
         return statusCode;
     }
 

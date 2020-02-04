@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class DBUtil {
 
-    static String url = "jdbc:mysql://www.tyrj.xyz:3306/factory?serverTimezone=CTT";
+    static String url = "jdbc:mysql://www.tyrj.xyz:3306/factory?serverTimezone=CTT&useUnicode=true&characterEncoding=UTF-8";
     static String username = "factoryadmin";
     static String password = "factoryroot";
 
@@ -110,12 +110,20 @@ public class DBUtil {
             pstmt = conn.prepareStatement(sql);
             for (int i = 0; i < params.size(); i++) {
                 pstmt.setObject(i + 1, params.get(i));
+                System.out.println("填充："+params.get(i));
             }
-            result = pstmt.executeUpdate();
-            System.out.println("执行完毕sql");
+            try {
+                result = pstmt.executeUpdate();
+                System.out.println("执行完毕sql");
+            } catch (SQLException e) {
+                System.out.println("执行sql异常");
+                e.printStackTrace();
+            }
+
             DBUtil.closeJDBC(null, pstmt, conn);
         } catch (Exception e) {
             // TODO: handle exception
+            e.printStackTrace();
         }
 
         return result;

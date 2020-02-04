@@ -1,0 +1,316 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Register_table1</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <style>
+      table {
+        margin: auto;
+        width: 85%;
+        align-self: center;
+        border-collapse: collapse;
+        font-family: 黑体;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      td {
+        border: 1px solid #D3D3D3;
+        text-align: center;
+        padding: 8px;
+      }
+
+      label {
+        color: red;
+      }
+
+      .btn {
+        align-self: auto;
+        margin: 10px 46%;
+        background: #01DFD7;
+        border: #01DFD7;
+        width: 150px;
+        height: 50px;
+        font-size: 25px;
+        color: white;
+        border-radius: 50px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <form id="uploadForm" method="POST">
+      <table>
+        <tr>
+          <td colspan="8" style="border: 0px; background: gray; height: 30px;">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="8" style="border: 0px;">
+            <h1>用户信息</h1>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="8" style="border: 0px;">
+
+          </td>
+        </tr>
+        <tr>
+          <td colspan="8" style="border: 0px; text-align: left; color: gray;">
+            <h2>信息登记表</h2>
+          </td>
+        </tr>
+        </tr>
+        <tr>
+          <td>姓名<label>*</label></td>
+          <td><input type="text" name="name" required></td>
+          <td>性别<label>*</label></td>
+          <td style="text-align: left;">
+            <input type="radio" name="sex" value="1" checked>男&ensp;&ensp;
+            <input type="radio" name="sex" value="0">女
+          </td>
+          <td>民族<label>*</label></td>
+          <td><input type="text" name="nation"></td>
+          <td colspan="2" rowspan="4"></td>
+        </tr>
+        <tr>
+          <td>出生日期<label>*</label></td>
+          <td><input type="date" name="birthday"></td>
+          <td>身高<label>*</label></td>
+          <td><input type="number" name="height" placeholder="cm"></td>
+          <td>体重<label>*</label></td>
+          <td><input type="number" name="weight" placeholder="kg"></td>
+        </tr>
+        <tr>
+          <td>学历<label>*</label></td>
+          <td>
+            <select style="width: 160px; height: 30px;" name="education">
+              <option>小学</option>
+              <option>初中</option>
+              <option>高中</option>
+              <option>本科</option>
+              <option>专科</option>
+              <option>研究生</option>
+              <option>博士</option>
+            </select>
+          </td>
+          <td colspan="2">联系方式<label>*</label></td>
+          <td colspan="2"><input style="width: 300px; height: 20PX;" type="text" name="phone" placeholder="电话"></td>
+        </tr>
+        <tr>
+          <td>身份证号<label>*</label></td>
+          <td colspan="2"><input style="width: 300px; height: 20PX;" type="text" name="idCard"></td>
+          <td>工种<label>*</label></td>
+          <td colspan="2"><input style="width: 300px; height: 20PX;" type="text" name="typeWork"></td>
+        </tr>
+        <tr>
+          <td>现住址<label>*</label></td>
+          <td colspan="2">
+            <select name="addr">
+              <option>北京市</option>
+            </select>
+            <select name="addr">
+              <option>北京城区</option>
+            </select>
+            <select name="addr">
+              <option>东城区</option>
+            </select>
+          </td>
+          <td>健康状况<label>*</label></td>
+          <td><input type="text" name="health"></td>
+          <td>婚姻状况<label>*</label></td>
+          <td colspan="2"><input type="text" name="marital"></td>
+        </tr>
+        <tr>
+          <td rowspan="3">教育背景</td>
+          <td colspan="2">
+            起止年月
+          </td>
+          <td style="font-family: 黑体; font-weight: bold;">
+            学校名称
+          </td>
+          <td style="font-family: 黑体; font-weight: bold;">
+            学历
+          </td>
+          <td style="font-family: 黑体; font-weight: bold;">
+            学历获取方式
+          </td>
+          <td colspan="2" style="font-family: 黑体; font-weight: bold;">
+            学校所在地
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input style="width: 200px; height: 25px;" type="date" name="eduStartDate1"><br><br>
+            <input style="width: 200px; height: 25px;" type="date" name="eduEndDate1">
+          </td>
+          <td><input type="text" name="school1"></td>
+          <td><input type="text" name="education1"></td>
+          <td><input type="text" name="eduSource1"></td>
+          <td><input type="text" name="schoolAddr1"></td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <input style="width: 200px; height: 25px;" type="date" name="eduStartDate2"><br><br>
+            <input style="width: 200px; height: 25px;" type="date" name="eduEndDate2">
+          </td>
+          <td><input type="text" name="school2"></td>
+          <td><input type="text" name="education2"></td>
+          <td><input type="text" name="eduSource2"></td>
+          <td><input type="text" name="schoolAddr2"></td>
+        </tr>
+        <tr>
+          <td rowspan="3">工作经历</td>
+          <td colspan="2">
+            起止年月
+          </td>
+          <td>
+            工作单位
+          </td>
+          <td>
+            岗位
+          </td>
+          <td>
+            离职原因
+          </td>
+          <td colspan="2">
+            证明人电话
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input style="width: 200px; height: 25px;" type="date" name="workStartDate1"><br><br>
+            <input style="width: 200px; height: 25px;" type="date" name="workEndDate1">
+          </td>
+          <td><input type="text" name="workUnit1"></td>
+          <td><input type="text" name="post1"></td>
+          <td><input type="text" name="leaving1"></td>
+          <td><input type="number" name="witPhone1"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input style="width: 200px; height: 25px;" type="date" name="workStartDate2"><br><br>
+            <input style="width: 200px; height: 25px;" type="date" name="workEndDate2">
+          </td>
+          <td><input type="text" name="workUnit2"></td>
+          <td><input type="text" name="post2"></td>
+          <td><input type="text" name="leaving2"></td>
+          <td><input type="number" name="witPhone2"></td>
+        </tr>
+        <tr>
+          <td colspan="2" rowspan="5">培训经历</td>
+          <td colspan="2">培训时间</td>
+          <td colspan="2">培训机构</td>
+          <td colspan="2">培训内容</td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><input type="number" name="trainDate1" placeholder="月"></td>
+          <td colspan="2"><input type="text" name="trainPlace1"></td>
+          <td colspan="2"><input type="text" name="trainCon1"></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="number" name="trainDate2" placeholder="月"></td>
+          <td colspan="2"><input type="text" name="trainPlace2"></td>
+          <td colspan="2"><input type="text" name="trainCon2"></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="number" name="trainDate3" placeholder="月"></td>
+          <td colspan="2"><input type="text" name="trainPlace3"></td>
+          <td colspan="2"><input type="text" name="trainCon3"></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="number" name="trainDate4" placeholder="月"></td>
+          <td colspan="2"><input type="text" name="trainPlace4"></td>
+          <td colspan="2"><input type="text" name="trainCon4"></td>
+        </tr>
+        <tr>
+          <td colspan="2" rowspan="5">资格证书</td>
+          <td>颁发时间</td>
+          <td colspan="2">证书名称</td>
+          <td colspan="3">颁发机构</td>
+        </tr>
+        <tr>
+          <td><input type="date" name="awardDate1"></td>
+          <td colspan="2"><input style="width: 280px; height: 15px;" type="text" name="awardPlace1"></td>
+          <td colspan="3"><input style="width: 380px; height: 15px;" type="text" name="awardCon1"></td>
+        </tr>
+        <tr>
+          <td><input type="date" name="awardDate2"></td>
+          <td colspan="2"><input style="width: 280px; height: 15px;" type="text" name="awardPlace2"></td>
+          <td colspan="3"><input style="width: 380px; height: 15px;" type="text" name="awardCon2"></td>
+        </tr>
+        <tr>
+          <td><input type="date" name="awardDate3"></td>
+          <td colspan="2"><input style="width: 280px; height: 15px;" type="text" name="awardPlace3"></td>
+          <td colspan="3"><input style="width: 380px; height: 15px;" type="text" name="awardCon3"></td>
+        </tr>
+        <tr>
+          <td><input type="date" name="awardDate4"></td>
+          <td colspan="2"><input style="width: 280px; height: 25px;" type="text" name="awardPlace4"></td>
+          <td colspan="3"><input style="width: 380px; height: 25px;" type="text" name="awardCon4"></td>
+        </tr>
+        <tr>
+          <td colspan="2" rowspan="3">家庭成员情况</td>
+          <td>关系</td>
+          <td>姓名</td>
+          <td colspan="2">工作单位</td>
+          <td colspan="2">联系方式</td>
+        </tr>
+        <tr>
+          <td><input type="text" name="relation1"></td>
+          <td><input type="text" name="familyName1"></td>
+          <td colspan="2"><input style="width: 280px; height: 15px;" type="text" name="familyWorkUnit1"></td>
+          <td colspan="2"><input type="number" placeholder="电话" name="familyPhone1"></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="relation2"></td>
+          <td><input type="text" name="familyName2"></td>
+          <td colspan="2"><input style="width: 280px; height: 15px;" type="text" name="familyWorkUnit2"></td>
+          <td colspan="2"><input type="number" placeholder="电话" name="familyPhone2"></td>
+        </tr>
+        <tr>
+          <td colspan="2" rowspan="2">自我评价</td>
+          <td colspan="6">个人优点、缺点、专长、工作业绩、爱好、职业规划等</td>
+        </tr>
+        <tr>
+          <td colspan="6"><input style="width: 900px; height: 25px;" type="text" name="selfEva"></td>
+        </tr>
+        <tr>
+          <td colspan="2" rowspan="2">公司评价</td>
+          <td colspan="6">工作能力、工作态度、工作成绩、成长潜力、品行等</td>
+        </tr>
+        <tr>
+          <td colspan="6"><input style="width: 900px; height: 25px;" type="text" name="comEva"></td>
+        </tr>
+      </table>
+      <input type="submit" id="qwer" name="submit" class="btn" type="button" value="下一步">
+    </form>
+
+    <script type="text/javascript">
+      $(function () {
+        $('#qwer').click(function () {
+          //const formData = new FormData($("#uploadForm")[0]);
+          $.ajax({
+            url: 'UserInfoInsertServlet',
+            type: 'POST',
+            data: $('#uploadForm').serialize(),
+            success: function (date) {
+              alert('成功');
+            },
+            error: function (data) {
+              alert('错误!');
+            }
+          });
+          return false;
+        });
+      })
+
+    </script>
+
+  </body>
+</html>

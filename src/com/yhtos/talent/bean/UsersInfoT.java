@@ -12,7 +12,8 @@ import java.sql.Date;
 public class UsersInfoT extends TableF {
 
     private String name;        //姓名
-    private boolean sex;        //性别
+    private String birthday;//shengri
+    private int sex;        //性别
     private String idCard;      //身份证号
     private String nation;      //民族
     private float height;       //身高
@@ -25,7 +26,7 @@ public class UsersInfoT extends TableF {
     private String addr;        //现住地址
     private String selfEva;     //自我评价
     private String comEva;      //公司评价
-    private boolean state;      //审核状态
+    private int state;      //审核状态
     private String avatar;      //头像路径
     private String idPositive;  //身份证正面
     private String idReverse;   //身份证反面
@@ -106,12 +107,131 @@ public class UsersInfoT extends TableF {
     private String familyPhone2;
     private String familyWorkUnit2;
 
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
     public UsersInfoT() {
     }
 
-    public UsersInfoT(String username, String name, boolean sex, String idCard, String nation, float height,
+    public UsersInfoT(String username, String name, String birthday, int sex, String idCard, String nation,
+                      float height, float weight, String phone, String education, String health, String marital,
+                      String typeWork, String addr, String selfEva, String comEva, int state, String avatar,
+                      String idPositive, String idReverse, String jobCertifi, String other1, String other2,
+                      String eduStartDate1, String eduEndDate1, String school1, String education1, String eduSource1,
+                      String schoolAddr1, String eduStartDate2, String eduEndDate2, String school2, String education2,
+                      String eduSource2, String schoolAddr2, String workStartDate1, String workEndDate1, String workUnit1,
+                      String post1, String leaving1, String witPhone1, String workStartDate2, String workEndDate2,
+                      String workUnit2, String post2, String leaving2, String witPhone2, String workStartDate3,
+                      String workEndDate3, String workUnit3, String post3, String leaving3, String witPhone3,
+                      String workStartDate4, String workEndDate4, String workUnit4, String post4, String leaving4,
+                      String witPhone4, String trainDate1, String trainPlace1, String trainCon1, String trainDate2,
+                      String trainPlace2, String trainCon2, String trainDate3, String trainPlace3, String trainCon3,
+                      String trainDate4, String trainPlace4, String trainCon4, String awardDate1, String awardPlace1,
+                      String awardCon1, String awardDate2, String awardPlace2, String awardCon2, String awardDate3,
+                      String awardPlace3, String awardCon3, String awardDate4, String awardPlace4, String awardCon4,
+                      String relation1, String familyName1, String familyPhone1, String familyWorkUnit1, String relation2,
+                      String familyName2, String familyPhone2, String familyWorkUnit2) {
+        super(username);
+        this.name = name;
+        this.birthday = birthday;
+        this.sex = sex;
+        this.idCard = idCard;
+        this.nation = nation;
+        this.height = height;
+        this.weight = weight;
+        this.phone = phone;
+        this.education = education;
+        this.health = health;
+        this.marital = marital;
+        this.typeWork = typeWork;
+        this.addr = addr;
+        this.selfEva = selfEva;
+        this.comEva = comEva;
+        this.state = state;
+        this.avatar = avatar;
+        this.idPositive = idPositive;
+        this.idReverse = idReverse;
+        this.jobCertifi = jobCertifi;
+        this.other1 = other1;
+        this.other2 = other2;
+        this.eduStartDate1 = eduStartDate1;
+        this.eduEndDate1 = eduEndDate1;
+        this.school1 = school1;
+        this.education1 = education1;
+        this.eduSource1 = eduSource1;
+        this.schoolAddr1 = schoolAddr1;
+        this.eduStartDate2 = eduStartDate2;
+        this.eduEndDate2 = eduEndDate2;
+        this.school2 = school2;
+        this.education2 = education2;
+        this.eduSource2 = eduSource2;
+        this.schoolAddr2 = schoolAddr2;
+        this.workStartDate1 = workStartDate1;
+        this.workEndDate1 = workEndDate1;
+        this.workUnit1 = workUnit1;
+        this.post1 = post1;
+        this.leaving1 = leaving1;
+        this.witPhone1 = witPhone1;
+        this.workStartDate2 = workStartDate2;
+        this.workEndDate2 = workEndDate2;
+        this.workUnit2 = workUnit2;
+        this.post2 = post2;
+        this.leaving2 = leaving2;
+        this.witPhone2 = witPhone2;
+        this.workStartDate3 = workStartDate3;
+        this.workEndDate3 = workEndDate3;
+        this.workUnit3 = workUnit3;
+        this.post3 = post3;
+        this.leaving3 = leaving3;
+        this.witPhone3 = witPhone3;
+        this.workStartDate4 = workStartDate4;
+        this.workEndDate4 = workEndDate4;
+        this.workUnit4 = workUnit4;
+        this.post4 = post4;
+        this.leaving4 = leaving4;
+        this.witPhone4 = witPhone4;
+        this.trainDate1 = trainDate1;
+        this.trainPlace1 = trainPlace1;
+        this.trainCon1 = trainCon1;
+        this.trainDate2 = trainDate2;
+        this.trainPlace2 = trainPlace2;
+        this.trainCon2 = trainCon2;
+        this.trainDate3 = trainDate3;
+        this.trainPlace3 = trainPlace3;
+        this.trainCon3 = trainCon3;
+        this.trainDate4 = trainDate4;
+        this.trainPlace4 = trainPlace4;
+        this.trainCon4 = trainCon4;
+        this.awardDate1 = awardDate1;
+        this.awardPlace1 = awardPlace1;
+        this.awardCon1 = awardCon1;
+        this.awardDate2 = awardDate2;
+        this.awardPlace2 = awardPlace2;
+        this.awardCon2 = awardCon2;
+        this.awardDate3 = awardDate3;
+        this.awardPlace3 = awardPlace3;
+        this.awardCon3 = awardCon3;
+        this.awardDate4 = awardDate4;
+        this.awardPlace4 = awardPlace4;
+        this.awardCon4 = awardCon4;
+        this.relation1 = relation1;
+        this.familyName1 = familyName1;
+        this.familyPhone1 = familyPhone1;
+        this.familyWorkUnit1 = familyWorkUnit1;
+        this.relation2 = relation2;
+        this.familyName2 = familyName2;
+        this.familyPhone2 = familyPhone2;
+        this.familyWorkUnit2 = familyWorkUnit2;
+    }
+
+    public UsersInfoT(String username, String name, int sex, String idCard, String nation, float height,
                       float weight, String phone, String education, String health, String marital, String typeWork,
-                      String addr, String selfEva, String comEva, boolean state, String avatar, String idPositive,
+                      String addr, String selfEva, String comEva, int state, String avatar, String idPositive,
                       String idReverse, String jobCertifi, String other1, String other2, String eduStartDate1,
                       String eduEndDate1, String school1, String education1, String eduSource1, String schoolAddr1,
                       String eduStartDate2, String eduEndDate2, String school2, String education2, String eduSource2,
@@ -219,9 +339,9 @@ public class UsersInfoT extends TableF {
         this.familyWorkUnit2 = familyWorkUnit2;
     }
 
-    public UsersInfoT(int id, Date slamp, String username, String name, boolean sex, String idCard, String nation,
+    public UsersInfoT(int id, Date slamp, String username, String name, int sex, String idCard, String nation,
                       float height, float weight, String phone, String education, String health, String marital,
-                      String typeWork, String addr, String selfEva, String comEva, boolean state, String avatar,
+                      String typeWork, String addr, String selfEva, String comEva, int state, String avatar,
                       String idPositive, String idReverse, String jobCertifi, String other1, String other2,
                       String eduStartDate1, String eduEndDate1, String school1, String education1, String eduSource1,
                       String schoolAddr1, String eduStartDate2, String eduEndDate2, String school2, String education2,
@@ -337,11 +457,11 @@ public class UsersInfoT extends TableF {
         this.name = name;
     }
 
-    public boolean getSex() {
+    public int getSex() {
         return sex;
     }
 
-    public void setSex(boolean sex) {
+    public void setSex(int sex) {
         this.sex = sex;
     }
 
@@ -441,11 +561,11 @@ public class UsersInfoT extends TableF {
         this.comEva = comEva;
     }
 
-    public boolean getState() {
+    public int getState() {
         return state;
     }
 
-    public void setState(boolean state) {
+    public void setState(int state) {
         this.state = state;
     }
 
@@ -1039,5 +1159,100 @@ public class UsersInfoT extends TableF {
 
     public void setFamilyWorkUnit2(String familyWorkUnit2) {
         this.familyWorkUnit2 = familyWorkUnit2;
+    }
+
+    @Override
+    public String toString() {
+        return "UsersInfoT{" +
+                "name='" + name + '\'' +
+                ", sex=" + sex +
+                ", idCard='" + idCard + '\'' +
+                ", nation='" + nation + '\'' +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", phone='" + phone + '\'' +
+                ", education='" + education + '\'' +
+                ", health='" + health + '\'' +
+                ", marital='" + marital + '\'' +
+                ", typeWork='" + typeWork + '\'' +
+                ", addr='" + addr + '\'' +
+                ", selfEva='" + selfEva + '\'' +
+                ", comEva='" + comEva + '\'' +
+                ", state=" + state +
+                ", avatar='" + avatar + '\'' +
+                ", idPositive='" + idPositive + '\'' +
+                ", idReverse='" + idReverse + '\'' +
+                ", jobCertifi='" + jobCertifi + '\'' +
+                ", other1='" + other1 + '\'' +
+                ", other2='" + other2 + '\'' +
+                ", eduStartDate1='" + eduStartDate1 + '\'' +
+                ", eduEndDate1='" + eduEndDate1 + '\'' +
+                ", school1='" + school1 + '\'' +
+                ", education1='" + education1 + '\'' +
+                ", eduSource1='" + eduSource1 + '\'' +
+                ", schoolAddr1='" + schoolAddr1 + '\'' +
+                ", eduStartDate2='" + eduStartDate2 + '\'' +
+                ", eduEndDate2='" + eduEndDate2 + '\'' +
+                ", school2='" + school2 + '\'' +
+                ", education2='" + education2 + '\'' +
+                ", eduSource2='" + eduSource2 + '\'' +
+                ", schoolAddr2='" + schoolAddr2 + '\'' +
+                ", workStartDate1='" + workStartDate1 + '\'' +
+                ", workEndDate1='" + workEndDate1 + '\'' +
+                ", workUnit1='" + workUnit1 + '\'' +
+                ", post1='" + post1 + '\'' +
+                ", leaving1='" + leaving1 + '\'' +
+                ", witPhone1='" + witPhone1 + '\'' +
+                ", workStartDate2='" + workStartDate2 + '\'' +
+                ", workEndDate2='" + workEndDate2 + '\'' +
+                ", workUnit2='" + workUnit2 + '\'' +
+                ", post2='" + post2 + '\'' +
+                ", leaving2='" + leaving2 + '\'' +
+                ", witPhone2='" + witPhone2 + '\'' +
+                ", workStartDate3='" + workStartDate3 + '\'' +
+                ", workEndDate3='" + workEndDate3 + '\'' +
+                ", workUnit3='" + workUnit3 + '\'' +
+                ", post3='" + post3 + '\'' +
+                ", leaving3='" + leaving3 + '\'' +
+                ", witPhone3='" + witPhone3 + '\'' +
+                ", workStartDate4='" + workStartDate4 + '\'' +
+                ", workEndDate4='" + workEndDate4 + '\'' +
+                ", workUnit4='" + workUnit4 + '\'' +
+                ", post4='" + post4 + '\'' +
+                ", leaving4='" + leaving4 + '\'' +
+                ", witPhone4='" + witPhone4 + '\'' +
+                ", trainDate1='" + trainDate1 + '\'' +
+                ", trainPlace1='" + trainPlace1 + '\'' +
+                ", trainCon1='" + trainCon1 + '\'' +
+                ", trainDate2='" + trainDate2 + '\'' +
+                ", trainPlace2='" + trainPlace2 + '\'' +
+                ", trainCon2='" + trainCon2 + '\'' +
+                ", trainDate3='" + trainDate3 + '\'' +
+                ", trainPlace3='" + trainPlace3 + '\'' +
+                ", trainCon3='" + trainCon3 + '\'' +
+                ", trainDate4='" + trainDate4 + '\'' +
+                ", trainPlace4='" + trainPlace4 + '\'' +
+                ", trainCon4='" + trainCon4 + '\'' +
+                ", awardDate1='" + awardDate1 + '\'' +
+                ", awardPlace1='" + awardPlace1 + '\'' +
+                ", awardCon1='" + awardCon1 + '\'' +
+                ", awardDate2='" + awardDate2 + '\'' +
+                ", awardPlace2='" + awardPlace2 + '\'' +
+                ", awardCon2='" + awardCon2 + '\'' +
+                ", awardDate3='" + awardDate3 + '\'' +
+                ", awardPlace3='" + awardPlace3 + '\'' +
+                ", awardCon3='" + awardCon3 + '\'' +
+                ", awardDate4='" + awardDate4 + '\'' +
+                ", awardPlace4='" + awardPlace4 + '\'' +
+                ", awardCon4='" + awardCon4 + '\'' +
+                ", relation1='" + relation1 + '\'' +
+                ", familyName1='" + familyName1 + '\'' +
+                ", familyPhone1='" + familyPhone1 + '\'' +
+                ", familyWorkUnit1='" + familyWorkUnit1 + '\'' +
+                ", relation2='" + relation2 + '\'' +
+                ", familyName2='" + familyName2 + '\'' +
+                ", familyPhone2='" + familyPhone2 + '\'' +
+                ", familyWorkUnit2='" + familyWorkUnit2 + '\'' +
+                '}';
     }
 }

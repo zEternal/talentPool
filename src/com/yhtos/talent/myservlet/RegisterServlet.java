@@ -50,6 +50,8 @@ public class RegisterServlet extends HttpServlet {
             statu = 1;
         }
 
+        request.getSession().setAttribute("username",userName);
+
         JSONObject resJson = new JSONObject();
         resJson.put("username",userName);
         resJson.put("statu",statu);

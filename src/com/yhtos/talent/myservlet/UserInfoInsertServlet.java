@@ -18,25 +18,115 @@ import java.io.IOException;
  * 创建时间：2019/
  * 修改时间：2020/2/2
  */
-@WebServlet("/UserInfoInsertServlet")
+@WebServlet(name = "UserInfoInsertServlet", urlPatterns = "/UserInfoInsertServlet")
 public class UserInfoInsertServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html,charset=utf-8");
-        String username = request.getParameter("username");
-        String name = request.getParameter("name");        //姓名
-        boolean sex = Boolean.parseBoolean(request.getParameter("sex"));        //性别
-        String idCard = request.getParameter("idCard");      //身份证号
-        String nation = request.getParameter("nation");      //民族
-        float height = Float.parseFloat(request.getParameter("height"));       //身高
-        float weight = Float.parseFloat(request.getParameter("weight"));       //体重
-        String phone = request.getParameter("phone");       //电话
-        String education = request.getParameter("education");   //学历
-        String health = request.getParameter("health");      //健康状况
-        String marital = request.getParameter("marital");     //婚姻状况
-        String typeWork = request.getParameter("typeWork");    //工种
-        String addr = request.getParameter("addr");        //现住地址
-        String selfEva = request.getParameter("selfEva");     //自我评价
-        String comEva = request.getParameter("comEva");      //公司评价
+        String username = null;
+        String name = null;        //姓名
+        String birthday = null;
+        int sex = 0;        //性别
+        String idCard = null;      //身份证号
+        String nation = null;      //民族
+        float height = 0;       //身高
+        float weight = 0;       //体重
+        String phone = null;       //电话
+        String education = null;   //学历
+        String health = null;      //健康状况
+        String marital = null;     //婚姻状况
+        String typeWork = null;    //工种
+        String addr = null;        //现住地址
+        String selfEva = null;     //自我评价
+        String comEva = null;      //公司评价
+        String eduStartDate1 = null;
+        String eduEndDate1 = null;
+        String school1 = null;
+        String education1 = null;
+        String eduSource1 = null;
+        String schoolAddr1 = null;
+        String eduStartDate2 = null;
+        String eduEndDate2 = null;
+        String school2 = null;
+        String education2 = null;
+        String eduSource2 = null;
+        String schoolAddr2 = null;
+        String workStartDate1 = null;
+        String workEndDate1 = null;
+        String workUnit1 = null;
+        String post1 = null;
+        String leaving1 = null;
+        String witPhone1 = null;
+        String workStartDate2 = null;
+        String workEndDate2 = null;
+        String workUnit2 = null;
+        String post2 = null;
+        String leaving2 = null;
+        String witPhone2 = null;
+        String trainDate1 = null;
+        String trainPlace1 = null;
+        String trainCon1 = null;
+        String trainDate2 = null;
+        String trainPlace2 = null;
+        String trainCon2 = null;
+        String trainDate3 = null;
+        String trainPlace3 = null;
+        String trainCon3 = null;
+        String trainDate4 = null;
+        String trainPlace4 = null;
+        String trainCon4 = null;
+        String awardDate1 = null;
+        String awardPlace1 = null;
+        String awardCon1 = null;
+        String awardDate2 = null;
+        String awardPlace2 = null;
+        String awardCon2 = null;
+        String awardDate3 = null;
+        String awardPlace3 = null;
+        String awardCon3 = null;
+        String awardDate4 = null;
+        String awardPlace4 = null;
+        String awardCon4 = null;
+        String relation1 = null;
+        String familyName1 = null;
+        String familyPhone1 = null;
+        String familyWorkUnit1 = null;
+        String relation2 = null;
+        String familyName2 = null;
+        String familyPhone2 = null;
+        String familyWorkUnit2 = null;
+        try {
+            System.out.println("----------------------------------------");
+            username = (String)request.getSession().getAttribute("username");
+            username = "jian456456789";
+            name = request.getParameter("name");
+            birthday = request.getParameter("birthday");
+            System.out.println("name--" + name);
+            sex = Integer.parseInt(request.getParameter("sex"));
+            System.out.println("sex--" + sex);
+            idCard = request.getParameter("idCard");
+            System.out.println("idCard--" + idCard);
+            nation = request.getParameter("nation");
+            System.out.println("nation--" + nation);
+            height = Float.parseFloat(request.getParameter("height"));
+            System.out.println("height--" + request.getParameter("height"));
+            weight = Float.parseFloat(request.getParameter("weight"));
+            System.out.println("weight--" + request.getParameter("weight"));
+            phone = request.getParameter("phone");
+            System.out.println("phone--" + phone);
+            education = request.getParameter("education");
+            System.out.println("education--" + education);
+            health = request.getParameter("health");
+            System.out.println("health--" + health);
+            marital = request.getParameter("marital");
+            System.out.println("marital--" + marital);
+            typeWork = request.getParameter("typeWork");
+            System.out.println("typeWork--" + typeWork);
+            addr = request.getParameter("addr");
+            System.out.println("addr--" + addr);
+            selfEva = request.getParameter("selfEva");
+            System.out.println("selfEva--" + selfEva);
+            comEva = request.getParameter("comEva");
+            System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
         /*
         String avatar = request.getParameter("avatar");      //头像路径
         String idPositive = request.getParameter("idPositive");  //身份证正面
@@ -45,32 +135,32 @@ public class UserInfoInsertServlet extends HttpServlet {
         String other1 = request.getParameter("other1");      //其他证书1
         String other2 = request.getParameter("other2");      //其他证书2
         */
-        String eduStartDate1 = request.getParameter("eduStartDate1");
-        String eduEndDate1 = request.getParameter("eduEndDate1");
-        String school1 = request.getParameter("school1");
-        String education1 = request.getParameter("education1");
-        String eduSource1 = request.getParameter("eduSource1");
-        String schoolAddr1 = request.getParameter("schoolAddr1");
-        String eduStartDate2 = request.getParameter("eduStartDate2");
-        String eduEndDate2 = request.getParameter("eduEndDate2");
-        String school2 = request.getParameter("school2");
-        String education2 = request.getParameter("education2");
-        String eduSource2 = request.getParameter("eduSource2");
-        String schoolAddr2 = request.getParameter("schoolAddr2");
-        //工作经历
-        String workStartDate1 = request.getParameter("workStartDate1");
-        String workEndDate1 = request.getParameter("workEndDate1");
-        String workUnit1 = request.getParameter("workUnit1");
-        String post1 = request.getParameter("post1");
-        String leaving1 = request.getParameter("leaving1");
-        String witPhone1 = request.getParameter("witPhone1");
-        String workStartDate2 = request.getParameter("workStartDate2");
-        String workEndDate2 = request.getParameter("workEndDate2");
-        String workUnit2 = request.getParameter("workUnit2");
-        String post2 = request.getParameter("post2");
-        String leaving2 = request.getParameter("leaving2");
-        String witPhone2 = request.getParameter("witPhone2");
-        String workStartDate3 = request.getParameter("workStartDate3");
+            eduStartDate1 = request.getParameter("eduStartDate1");
+            eduEndDate1 = request.getParameter("eduEndDate1");
+            school1 = request.getParameter("school1");
+            education1 = request.getParameter("education1");
+            eduSource1 = request.getParameter("eduSource1");
+            schoolAddr1 = request.getParameter("schoolAddr1");
+            eduStartDate2 = request.getParameter("eduStartDate2");
+            eduEndDate2 = request.getParameter("eduEndDate2");
+            school2 = request.getParameter("school2");
+            education2 = request.getParameter("education2");
+            eduSource2 = request.getParameter("eduSource2");
+            schoolAddr2 = request.getParameter("schoolAddr2");
+            //工作经历
+            workStartDate1 = request.getParameter("workStartDate1");
+            workEndDate1 = request.getParameter("workEndDate1");
+            workUnit1 = request.getParameter("workUnit1");
+            post1 = request.getParameter("post1");
+            leaving1 = request.getParameter("leaving1");
+            witPhone1 = request.getParameter("witPhone1");
+            workStartDate2 = request.getParameter("workStartDate2");
+            workEndDate2 = request.getParameter("workEndDate2");
+            workUnit2 = request.getParameter("workUnit2");
+            post2 = request.getParameter("post2");
+            leaving2 = request.getParameter("leaving2");
+            witPhone2 = request.getParameter("witPhone2");
+        /*String workStartDate3 = request.getParameter("workStartDate3");
         String workEndDate3 = request.getParameter("workEndDate3");
         String workUnit3 = request.getParameter("workUnit3");
         String post3 = request.getParameter("post3");
@@ -81,54 +171,58 @@ public class UserInfoInsertServlet extends HttpServlet {
         String workUnit4 = request.getParameter("workUnit4");
         String post4 = request.getParameter("post4");
         String leaving4 = request.getParameter("leaving4");
-        String witPhone4 = request.getParameter("witPhone4");
-        //培训经历
-        String trainDate1 = request.getParameter("trainDate1");
-        String trainPlace1 = request.getParameter("trainPlace1");
-        String trainCon1 = request.getParameter("trainCon1");
-        String trainDate2 = request.getParameter("trainDate2");
-        String trainPlace2 = request.getParameter("trainPlace2");
-        String trainCon2 = request.getParameter("trainCon2");
-        String trainDate3 = request.getParameter("trainDate3");
-        String trainPlace3 = request.getParameter("trainPlace3");
-        String trainCon3 = request.getParameter("trainCon3");
-        String trainDate4 = request.getParameter("trainDate4");
-        String trainPlace4 = request.getParameter("trainPlace4");
-        String trainCon4 = request.getParameter("trainCon4");
-        //资格证书
-        String awardDate1 = request.getParameter("awardDate1");
-        String awardPlace1 = request.getParameter("awardPlace1");
-        String awardCon1 = request.getParameter("awardCon1");
-        String awardDate2 = request.getParameter("awardDate2");
-        String awardPlace2 = request.getParameter("awardPlace2");
-        String awardCon2 = request.getParameter("awardCon2");
-        String awardDate3 = request.getParameter("awardDate3");
-        String awardPlace3 = request.getParameter("awardPlace3");
-        String awardCon3 = request.getParameter("awardCon3");
-        String awardDate4 = request.getParameter("awardDate4");
-        String awardPlace4 = request.getParameter("awardPlace4");
-        String awardCon4 = request.getParameter("awardCon4");
-        //家庭成员
-        String relation1 = request.getParameter("relation1");
-        String familyName1 = request.getParameter("familyName1");
-        String familyPhone1 = request.getParameter("familyPhone1");
-        String familyWorkUnit1 = request.getParameter("familyWorkUnit1");
-        String relation2 = request.getParameter("relation2");
-        String familyName2 = request.getParameter("familyName2");
-        String familyPhone2 = request.getParameter("familyPhone2");
-        String familyWorkUnit2 = request.getParameter("familyWorkUnit2");
+        String witPhone4 = request.getParameter("witPhone4");*/
+            //培训经历
+            trainDate1 = request.getParameter("trainDate1");
+            trainPlace1 = request.getParameter("trainPlace1");
+            trainCon1 = request.getParameter("trainCon1");
+            trainDate2 = request.getParameter("trainDate2");
+            trainPlace2 = request.getParameter("trainPlace2");
+            trainCon2 = request.getParameter("trainCon2");
+            trainDate3 = request.getParameter("trainDate3");
+            trainPlace3 = request.getParameter("trainPlace3");
+            trainCon3 = request.getParameter("trainCon3");
+            trainDate4 = request.getParameter("trainDate4");
+            trainPlace4 = request.getParameter("trainPlace4");
+            trainCon4 = request.getParameter("trainCon4");
+            //资格证书
+            awardDate1 = request.getParameter("awardDate1");
+            awardPlace1 = request.getParameter("awardPlace1");
+            awardCon1 = request.getParameter("awardCon1");
+            awardDate2 = request.getParameter("awardDate2");
+            awardPlace2 = request.getParameter("awardPlace2");
+            awardCon2 = request.getParameter("awardCon2");
+            awardDate3 = request.getParameter("awardDate3");
+            awardPlace3 = request.getParameter("awardPlace3");
+            awardCon3 = request.getParameter("awardCon3");
+            awardDate4 = request.getParameter("awardDate4");
+            awardPlace4 = request.getParameter("awardPlace4");
+            awardCon4 = request.getParameter("awardCon4");
+            //家庭成员
+            relation1 = request.getParameter("relation1");
+            familyName1 = request.getParameter("familyName1");
+            familyPhone1 = request.getParameter("familyPhone1");
+            familyWorkUnit1 = request.getParameter("familyWorkUnit1");
+            relation2 = request.getParameter("relation2");
+            familyName2 = request.getParameter("familyName2");
+            familyPhone2 = request.getParameter("familyPhone2");
+            familyWorkUnit2 = request.getParameter("familyWorkUnit2");
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
 
-        UsersInfoT use = new UsersInfoT(username, name,  sex,  idCard,  nation,  height,
+        UsersInfoT use = new UsersInfoT(username, name,birthday,  sex,  idCard,  nation,  height,
                 weight,  phone,  education,  health,  marital,  typeWork,
-                addr,  selfEva,  comEva, false,  null,  null,
+                addr,  selfEva,  comEva, 0,  null,  null,
                 null,  null,  null,  null,  eduStartDate1,
                 eduEndDate1,  school1,  education1,  eduSource1,  schoolAddr1,
                  eduStartDate2,  eduEndDate2,  school2,  education2,  eduSource2,
                  schoolAddr2,  workStartDate1,  workEndDate1,  workUnit1,  post1,
                  leaving1,  witPhone1,  workStartDate2,  workEndDate2,  workUnit2,
-                 post2,  leaving2,  witPhone2,  workStartDate3,  workEndDate3,
+                 post2,  leaving2,  witPhone2,  /*workStartDate3,  workEndDate3,
                  workUnit3,  post3,  leaving3,  witPhone3,  workStartDate4,
-                 workEndDate4,  workUnit4,  post4,  leaving4,  witPhone4,
+                 workEndDate4,  workUnit4,  post4,  leaving4,  witPhone4,*/
+                 null,null,null,null,null,null,null,null,null,null,null,null,
                  trainDate1,  trainPlace1,  trainCon1,  trainDate2,  trainPlace2,
                  trainCon2,  trainDate3,  trainPlace3,  trainCon3,  trainDate4,
                  trainPlace4,  trainCon4,  awardDate1,  awardPlace1,  awardCon1,
@@ -137,9 +231,15 @@ public class UserInfoInsertServlet extends HttpServlet {
                  familyName1,  familyPhone1,  familyWorkUnit1,  relation2,
                  familyName2,  familyPhone2,  familyWorkUnit2);
 
+        System.out.println("usernaem--" + username);
+        System.out.println(use.toString());
         UsersInfoDAOImpl ud = new UsersInfoDAOImpl();
-        int statu = ud.save(use);
-
+        int n = ud.save(use);
+        int statu = 4;
+        if (n > 0){
+            statu = 10;
+            System.out.println("数据存储成功");
+        }
         JSONObject resJson = new JSONObject();
         resJson.put("username",username);
         resJson.put("statu",statu);
