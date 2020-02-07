@@ -45,9 +45,14 @@ public class ImageInsertServlet extends HttpServlet {
                 //name = name.substring(name.lastIndexOf("\\") + 1);   //排除文件名中的地址符号\/
                 String newName = System.currentTimeMillis() + "";
                 fileName = savePath + "/l/" + "star_"  + name + "_" + newName + ".jpg";
-                map.put(name,fileName);
-                //System.out.println("filenameppp======" + fileName);
-                item.write(new File(fileName));
+                String filename = item.getName();
+                if (filename.equals("")){
+                    map.put(name,null);
+                } else {
+                    map.put(name,fileName);
+                    item.write(new File(fileName));
+                }
+
             }
             message = "文件上传成功！";
             statusCode = 10;//状态码
@@ -58,8 +63,8 @@ public class ImageInsertServlet extends HttpServlet {
         }
         ////////////////////路径存数据库
         UsersInfoDAOImpl ud = new UsersInfoDAOImpl();
-        //int n = ud.imgSave(map,(String)request.getSession().getAttribute("username"));
-        int n = ud.imgSave(map,"jian456456789");
+        int n = ud.imgSave(map,(String)request.getSession().getAttribute("username"));
+        n = ud.imgSave(map,"ggg");
         if (n > 0){
             statusCode = 101;
             System.out.println("照片插入成功");

@@ -19,9 +19,10 @@ public class RegUAInsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html,charset=utf-8");
 
-        String data = request.getParameter("data");
-        JSONObject jsonObject = new JSONObject(data);
-        String userName = jsonObject.getString("username");
+        /*String data = request.getParameter("data");
+        JSONObject jsonObject = new JSONObject(data);*/
+
+        String userName = request.getParameter("username");
 
         int statu = 0;//1：没有用户，可以注册     0：用户名重复
         if (DAOFactory.getLoginDAOImpl().selectLogin(userName,"") == null){

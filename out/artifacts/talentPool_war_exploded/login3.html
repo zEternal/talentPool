@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<!-- 虚线和实现的css -->
+	<link rel="stylesheet" type="text/css" href="css/webuploader.css" />
+	<link rel="stylesheet" type="text/css" href="css/id.css" />
+	<link rel="stylesheet" type="text/css" href="css/layui.css" />
+	<style>
+		table {
+			margin: auto;
+			width: 80%;
+			text-align: center;
+			font-family: 黑体;
+			font-weight: bold;
+			font-size: 16px;
+		}
+
+		.ui_button {
+			display: inline-block;
+			line-height: 45px;
+			padding: 0 70px;
+			color: #FFFFFF;
+			font-family: "微软雅黑";
+			font-weight: 700;
+			cursor: pointer;
+		}
+
+		.ui_button_primary {
+			background-color: #FF6600;
+			margin-bottom: 20px;
+		}
+
+		label.ui_button:hover {
+			background-color: #d46216;
+		}
+
+		td {
+			width: 150px;
+		}
+
+		.btn {
+			align-self: auto;
+			margin-left: 45%;
+			background: #01DFD7;
+			border: #01DFD7;
+			width: 150px;
+			height: 50px;
+			font-size: 25px;
+			color: white;
+			border-radius: 50px;
+			margin-top: 20px;
+			margin-bottom: 30px;
+		}
+	</style>
+</head>
+
+<body>
+<form id="from-pro" enctype="multipart/form-data" method="post" >
+	<table>
+		<tr>
+			<td colspan="8" style="background: gray; height: 30px;">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="8" style="padding:20px;">
+				<h1>用户信息</h1>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="padding:20px;">
+				<img src="images/buzhou1_08.png">
+			</td>
+		</tr>
+
+		 <tr>
+			<td colspan="2">
+					<input type="file" id="f" name="avatar" onchange="change()"
+						style="position: absolute; top: 0; bottom: 0; left: 0;right: 0; opacity: 0;">
+					<img id="preview" src="images/touxiang.jpg" name="pic"
+						class="file_img" style="margin: 5px 0px 20px 0px; width: 160px; height: 160px;" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<label class="ui_button ui_button_primary" for="f">选择头像</label>
+			</td>
+		</tr>
+
+		<!-- 上传身份证代码 -->
+		<tr style="text-align: center;">
+			<td>
+				身份证正面
+			</td>
+
+			<td>
+				身份证反面
+			</td>
+		</tr>
+		<!--身份证正面-->
+		<tr>
+			<td>
+				<div class="uploader-list-container">
+					<div class="queueList">
+						<div id="dndArea" class="placeholder">
+								<img id="preview2" alt="" src="" name="pic" class="file_img"
+									style="margin-top: 5px;margin-left: 12px; width: 500px; height: 300px;" />
+						</div>
+					</div>
+				</div>
+				<a href="javascript:;" class="file" style="margin-top: 10px">点击上传
+					<input type="file" id="f1" name="idPositive" onchange="change2()"
+						style="position: absolute; top: 0; bottom: 0; left: 0;right: 0; opacity: 0;">
+				</a>
+			</td>
+			<!--身份证反面-->
+			<td>
+				<div class="uploader-list-container">
+					<div class="queueList">
+						<div id="dndArea" class="placeholder">
+								<img id="preview3" alt="" src="" name="pic" class="file_img"
+									style="margin-top: 5px;margin-left: 12px; width: 500px; height: 300px;" />
+						</div>
+					</div>
+				</div>
+				<a href="javascript:;" class="file" style="margin-top: 10px">点击上传
+					<input type="file" id="f2" name="idReverse" onchange="change3()"
+						style="position: absolute; top: 0; bottom: 0; left: 0;right: 0; opacity: 0;">
+				</a>
+			</td>
+		</tr>
+
+
+		<!-- 职业资格证书代码 -->
+		<tr style="text-align: center;">
+			<td>
+				<br>职业资格证书
+			</td>
+
+			<td>
+				<br>其他证书
+			</td>
+		</tr>
+		<!--职业资格证书-->
+		<td>
+			<div class="uploader-list-container">
+				<div class="queueList">
+					<div id="dndArea" class="placeholder">
+							<img id="preview4" alt="" src="" name="pic" class="file_img"
+								style="margin-top: 5px;margin-left: 12px; width: 500px; height: 300px;" />
+					</div>
+				</div>
+			</div>
+			<a href="javascript:;" class="file" style="margin-top: 10px">点击上传
+				<input type="file" id="f4" name="jobCertifi" onchange="change4()"
+					style="position: absolute; top: 0; bottom: 0; left: 0;right: 0; opacity: 0;">
+			</a>
+		</td>
+		<!--其他证书-->
+		<td>
+			<div class="uploader-list-container">
+				<div class="queueList">
+					<div id="dndArea" class="placeholder">
+							<img id="preview5" alt="" src="" name="pic" class="file_img"
+								style="margin-top: 5px;margin-left: 12px; width: 500px; height: 300px;" />
+					</div>
+				</div>
+			</div>
+			<a href="javascript:;" class="file" style="margin-top: 10px">点击上传
+				<input type="file" id="f5" name="other1" onchange="change5()"
+					style="position: absolute; top: 0; bottom: 0; left: 0;right: 0; opacity: 0;">
+			</a>
+		</td>
+
+	</table>
+		<input class="btn" type="button" value="下一步" id="sender" onclick="uploadTrainProduct()">
+	</form>
+
+	<!-- 头像的js -->
+	<script type="text/javascript" src="js/touxiang.js"></script>
+
+	<!-- 方框和虚线框的js -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/webuploader.min.js"></script>
+	<script type="text/javascript" src="js/upload.js"></script>
+	<script type="text/javascript">
+		function uploadTrainProduct() {
+			var formData = new FormData($("#from-pro")[0]);  //重点：要用这种方法接收表单的参数
+			$.ajax({
+				url: "ImageInsertServlet",
+				type: 'POST',
+				data: formData,
+				// 告诉jQuery不要去处理发送的数据
+				processData: false,
+				// 告诉jQuery不要去设置Content-Type请求头
+				contentType: false,
+				async: false,
+				success: function (data) {
+					alert('提交成功！')
+					alert(data)
+				},
+				error:function (data) {
+					alert('失败')
+					alert(data)
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>

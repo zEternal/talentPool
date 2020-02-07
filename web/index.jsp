@@ -12,7 +12,7 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
   </head>
   <body>
-  <form >
+  <form id="kkid">
     名称：<input type="text" id="name"/><br/>
     血量：<input type="text" id="pw"/><br/>
     <input type="button" value="提交" id="sender">
@@ -20,6 +20,7 @@
   <div id="messageDiv"></div>
     <a href="tutu.html">上传照片</a><br>
     <a href="login2.html">genggeng</a>
+    <a href="login3.html">1245656</a>
   <script>
     $('#sender').click(function () {
       var name = document.getElementById('name').value;

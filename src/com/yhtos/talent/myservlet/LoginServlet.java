@@ -48,6 +48,7 @@ public class LoginServlet extends HttpServlet {
         if (loginT != null){
             statu = 1;
             role = loginT.getRole();
+            request.getSession().setAttribute("username",userName);
         }
 
         JSONObject resJson = new JSONObject();

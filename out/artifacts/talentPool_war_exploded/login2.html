@@ -300,6 +300,7 @@
             type: 'POST',
             data: $('#uploadForm').serialize(),
             success: function (date) {
+              var jss = $.parseJSON();
               alert('成功');
             },
             error: function (data) {

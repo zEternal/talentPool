@@ -97,7 +97,7 @@ public class UserInfoInsertServlet extends HttpServlet {
         try {
             System.out.println("----------------------------------------");
             username = (String)request.getSession().getAttribute("username");
-            username = "jian456456789";
+            username = "jian451343789";
             name = request.getParameter("name");
             birthday = request.getParameter("birthday");
             System.out.println("name--" + name);

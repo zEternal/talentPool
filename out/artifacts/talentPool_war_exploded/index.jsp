@@ -20,6 +20,7 @@
   <div id="messageDiv"></div>
     <a href="tutu.html">上传照片</a><br>
     <a href="login2.html">genggeng</a>
+    <a href="login3.html">1245656</a>
   <script>
     $('#sender').click(function () {
       var name = document.getElementById('name').value;

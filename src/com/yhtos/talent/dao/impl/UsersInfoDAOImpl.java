@@ -4,6 +4,7 @@ import com.yhtos.talent.bean.TableF;
 import com.yhtos.talent.bean.UsersInfoT;
 import com.yhtos.talent.dao.UserDAO;
 import com.yhtos.talent.util.DBUtil;
+import com.yhtos.talent.util.SkyTimeUtil;
 
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
@@ -143,10 +144,10 @@ public class UsersInfoDAOImpl implements UserDAO<UsersInfoT> {
         params.add(usersInfoT.getFamilyName2());
         params.add(usersInfoT.getFamilyPhone2());
         params.add(usersInfoT.getFamilyWorkUnit2());
-        Date date=new Date();   //这里的时util包下的
+        /*Date date=new Date();   //这里的时util包下的
         SimpleDateFormat temp=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  //这是24时
-        String Date=temp.format(date);
-        params.add(Date);
+        String Date=temp.format(date);*/
+        params.add(SkyTimeUtil.returnNowTime());
 
         try {
             statusCode = DBUtil.executeUpdate(sql,params);
