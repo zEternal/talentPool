@@ -197,6 +197,17 @@ public class UsersInfoDAOImpl implements UserDAO<UsersInfoT> {
         return 0;
     }
 
+    public int updateState(String username, int state) {
+        int statusCode = 0;
+        String sql = "UPDATE tb_userInfo_all SET state=? WHERE username=?";
+        List<Object> params=new ArrayList<Object>();
+        params.add(username);
+        params.add(state);
+        statusCode = DBUtil.executeUpdate(sql,params);
+
+        return statusCode;
+    }
+
     @Override
     public UsersInfoT findByUsername(String username) {
         UsersInfoT user = null;

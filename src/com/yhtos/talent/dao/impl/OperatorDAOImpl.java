@@ -41,6 +41,24 @@ public class OperatorDAOImpl implements UserDAO<OperatorT> {
         return 0;
     }
 
+    /**
+     * 功能：修改操作员状态
+     * @param username
+     * @param status 0：停用      1：启用
+     * @return
+     */
+    public int updateStatus(String username, int status) {
+        int statusCode = 0;
+
+        String sql = "UPDATE tb_operator SET status=? WHERE username=?";
+        List<Object> params=new ArrayList<Object>();
+        params.add(username);
+        params.add(status);
+        statusCode = DBUtil.executeUpdate(sql,params);
+
+        return statusCode;
+    }
+
     @Override
     public int update(OperatorT operatorT) {
         int statusCode = 0;

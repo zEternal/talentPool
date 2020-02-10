@@ -7,63 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="307664d3-7189-4e7a-9818-c68eb2a24fa7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/yhtos/talent/myservlet/ModifyOperatorStatusServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/yhtos/talent/myservlet/SelectOperatorServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/libs/commons-beanutils-1.7.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/libs/commons-collections-3.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/libs/commons-lang-2.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/libs/commons-logging.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/libs/ezmorph-1.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/libs/json-lib-2.1-jdk15.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/yhtos/talent/myservlet/ModifyUserStatusServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/EducationalT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/EducationalT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/FamilyT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/FamilyT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/LoginT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/LoginT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/ManagementT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/ManagementT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/OperatorT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/OperatorT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/QualificationT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/QualificationT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/TableF.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/TableF.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/TrainExperienceT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/TrainExperienceT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/UserInfoT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/UserInfoT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/UsersInfoT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/UsersInfoT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/WorkExperienceT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/bean/WorkExperienceT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/dao/impl/LoginDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/dao/impl/LoginDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/dao/impl/UsersInfoDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/dao/impl/UsersInfoDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/testMain/TestMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/testMain/TestMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/util/DBUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/WEB-INF/classes/com/yhtos/talent/util/DBUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/talentPool_war_exploded/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/bean/EducationalT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/bean/EducationalT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/bean/FamilyT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/bean/FamilyT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/bean/LoginT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/bean/LoginT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/bean/ManagementT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/bean/ManagementT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/bean/OperatorT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/bean/OperatorT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/bean/QualificationT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/bean/QualificationT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/bean/TableF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/bean/TableF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/bean/TrainExperienceT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/bean/TrainExperienceT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/bean/UserInfoT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/bean/UserInfoT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/bean/UsersInfoT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/bean/UsersInfoT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/bean/WorkExperienceT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/bean/WorkExperienceT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/dao/impl/LoginDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/dao/impl/LoginDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/dao/impl/OperatorDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/dao/impl/OperatorDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/dao/impl/UsersInfoDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/dao/impl/UsersInfoDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/myservlet/OperatorInsertServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/myservlet/OperatorInsertServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/testMain/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/testMain/TestMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/util/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/util/DBUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/EducationalT.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/EducationalT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/FamilyT.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/FamilyT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/LoginT.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/LoginT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/ManagementT.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/ManagementT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/OperatorT.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/OperatorT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/QualificationT.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/QualificationT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/TableF.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/TableF.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/TrainExperienceT.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/TrainExperienceT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/UserInfoT.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/UserInfoT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/UsersInfoT.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/UsersInfoT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/WorkExperienceT.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/bean/WorkExperienceT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/dao/impl/LoginDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/dao/impl/LoginDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/dao/impl/UsersInfoDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/dao/impl/UsersInfoDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/testMain/TestMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/testMain/TestMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/util/DBUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/yhtos/talent/util/DBUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yhtos/talent/myservlet/ModifyOperatorStatusServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yhtos/talent/myservlet/ModifyOperatorStatusServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +223,7 @@
       <workItem from="1581044476121" duration="13188000" />
       <workItem from="1581065803188" duration="4871000" />
       <workItem from="1581217375438" duration="16398000" />
-      <workItem from="1581303108942" duration="21316000" />
+      <workItem from="1581303108942" duration="27604000" />
     </task>
     <servers />
   </component>
