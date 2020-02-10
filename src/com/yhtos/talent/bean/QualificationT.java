@@ -1,6 +1,5 @@
 package com.yhtos.talent.bean;
 
-import java.sql.Date;
 /**
  * 类名：QualificationT
  * 功能：tb_qualification 用户资格证书表映射
@@ -10,18 +9,18 @@ import java.sql.Date;
  */
 public class QualificationT extends TableF {
 
-    private Date trainDate;     //颁发时间
+    private String trainDate;     //颁发时间
     private String trainPlace;  //证书名称
     private String trainCon;    //颁发机构
 
-    public QualificationT(String username, Date trainDate, String trainPlace, String trainCon) {
+    public QualificationT(String username, String trainDate, String trainPlace, String trainCon) {
         super(username);
         this.trainDate = trainDate;
         this.trainPlace = trainPlace;
         this.trainCon = trainCon;
     }
 
-    public QualificationT(int id, Date slamp, String username, Date trainDate, String trainPlace,
+    public QualificationT(int id, String slamp, String username, String trainDate, String trainPlace,
                           String trainCon) {
         super(id, slamp, username);
         this.trainDate = trainDate;
@@ -29,11 +28,11 @@ public class QualificationT extends TableF {
         this.trainCon = trainCon;
     }
 
-    public Date getTrainDate() {
+    public String getTrainDate() {
         return trainDate;
     }
 
-    public void setTrainDate(Date trainDate) {
+    public void setTrainDate(String trainDate) {
         this.trainDate = trainDate;
     }
 

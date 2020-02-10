@@ -1,6 +1,5 @@
 package com.yhtos.talent.bean;
 
-import java.sql.Date;
 
 /**
  * 类名：TrainExperienceT
@@ -12,18 +11,18 @@ import java.sql.Date;
 public class TrainExperienceT extends TableF{
 
 
-    private Date trainDate;     //培训时间
+    private String trainDate;     //培训时间
     private String trainPlace;  //培训机构
     private String trainCon;    //培训内容
 
-    public TrainExperienceT(String username, Date trainDate, String trainPlace, String trainCon) {
+    public TrainExperienceT(String username, String trainDate, String trainPlace, String trainCon) {
         super(username);
         this.trainDate = trainDate;
         this.trainPlace = trainPlace;
         this.trainCon = trainCon;
     }
 
-    public TrainExperienceT(int id, Date slamp, String username, Date trainDate,
+    public TrainExperienceT(int id, String slamp, String username, String trainDate,
                             String trainPlace, String trainCon) {
         super(id, slamp, username);
         this.trainDate = trainDate;
@@ -31,11 +30,11 @@ public class TrainExperienceT extends TableF{
         this.trainCon = trainCon;
     }
 
-    public Date getTrainDate() {
+    public String getTrainDate() {
         return trainDate;
     }
 
-    public void setTrainDate(Date trainDate) {
+    public void setTrainDate(String trainDate) {
         this.trainDate = trainDate;
     }
 

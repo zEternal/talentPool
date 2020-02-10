@@ -1,6 +1,5 @@
 package com.yhtos.talent.bean;
 
-import java.sql.Date;
 
 /**
  * 类名：EducationalT
@@ -11,14 +10,14 @@ import java.sql.Date;
  */
 public class EducationalT extends TableF{
 
-    private Date startDate;     //开始日期
-    private Date endDate;       //结束日期
+    private String startDate;     //开始日期
+    private String endDate;       //结束日期
     private String school;      //学校名称
     private String education;   //学历
     private String eduSource;   //学历获取方式
     private String schoolAddr;  //学校所在地
 
-    public EducationalT(String username, Date startDate, Date endDate, String school,
+    public EducationalT(String username, String startDate, String endDate, String school,
                         String education, String eduSource, String schoolAddr) {
         super(username);
         this.startDate = startDate;
@@ -29,8 +28,8 @@ public class EducationalT extends TableF{
         this.schoolAddr = schoolAddr;
     }
 
-    public EducationalT(int id, Date slamp, String username, Date startDate,
-                        Date endDate, String school, String education, String eduSource,
+    public EducationalT(int id, String slamp, String username, String startDate,
+                        String endDate, String school, String education, String eduSource,
                         String schoolAddr) {
         super(id, slamp, username);
         this.startDate = startDate;
@@ -41,19 +40,19 @@ public class EducationalT extends TableF{
         this.schoolAddr = schoolAddr;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 

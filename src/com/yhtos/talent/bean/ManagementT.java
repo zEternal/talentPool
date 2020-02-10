@@ -1,6 +1,5 @@
 package com.yhtos.talent.bean;
 
-import java.sql.Date;
 
 /**
  * 类名：ManagementT
@@ -18,7 +17,7 @@ public class ManagementT extends TableF {
         this.region = region;
     }
 
-    public ManagementT(int id, Date slamp, String username, String region) {
+    public ManagementT(int id, String slamp, String username, String region) {
         super(id, slamp, username);
         this.region = region;
     }

@@ -12,17 +12,35 @@ public class OperatorT extends TableF {
 
     private String name;    //姓名
     private String phone;   //联系方式
+    private int  status;    //状态
+    private String region;  //区域
+    private String password;
 
-    public OperatorT(String username, String name, String phone) {
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public OperatorT() {
+    }
+
+    public OperatorT(String username, String name, String phone, int status, String region) {
         super(username);
         this.name = name;
         this.phone = phone;
+        this.status = status;
+        this.region = region;
     }
 
-    public OperatorT(int id, Date slamp, String username, String name, String phone) {
+    public OperatorT(int id, String slamp, String username, String name, String phone, int status, String region) {
         super(id, slamp, username);
         this.name = name;
         this.phone = phone;
+        this.status = status;
+        this.region = region;
     }
 
     public String getName() {
@@ -39,5 +57,31 @@ public class OperatorT extends TableF {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    @Override
+    public String toString() {
+        return "OperatorT{" +
+                "name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", status=" + status +
+                ", region='" + region + '\'' +
+                '}';
     }
 }

@@ -1,6 +1,5 @@
 package com.yhtos.talent.bean;
 
-import java.sql.Date;
 
 /**
  * 类名：FamilyT
@@ -24,7 +23,7 @@ public class FamilyT extends TableF {
         this.workUnit = workUnit;
     }
 
-    public FamilyT(int id, Date slamp, String username, String relation, String name, String phone,
+    public FamilyT(int id, String slamp, String username, String relation, String name, String phone,
                    String workUnit) {
         super(id, slamp, username);
         this.relation = relation;

@@ -1,7 +1,5 @@
 package com.yhtos.talent.bean;
 
-import java.sql.Date;
-
 /**
  * 类名：UsersInfoT
  * 功能：tb_userInfo 用户信息表映射         个人所有信息
@@ -339,7 +337,7 @@ public class UsersInfoT extends TableF {
         this.familyWorkUnit2 = familyWorkUnit2;
     }
 
-    public UsersInfoT(int id, Date slamp, String username, String name, int sex, String idCard, String nation,
+    public UsersInfoT(int id, String slamp, String username, String name, int sex, String idCard, String nation,
                       float height, float weight, String phone, String education, String health, String marital,
                       String typeWork, String addr, String selfEva, String comEva, int state, String avatar,
                       String idPositive, String idReverse, String jobCertifi, String other1, String other2,

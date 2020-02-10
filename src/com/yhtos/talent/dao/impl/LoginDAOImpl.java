@@ -4,6 +4,7 @@ import com.yhtos.talent.bean.LoginT;
 import com.yhtos.talent.dao.LoginDAO;
 import com.yhtos.talent.dao.factory.DAOFactory;
 import com.yhtos.talent.util.DBUtil;
+import com.yhtos.talent.util.SkyTimeUtil;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -35,7 +36,16 @@ public class LoginDAOImpl implements LoginDAO {
 
     @Override
     public int updateLogin(LoginT loginT) {
-        return 0;
+        int statusCode = 0;
+
+        String sql = "UPDATE tb_user SET password=? WHERE username=?";
+        List<Object> params=new ArrayList<Object>();
+        params.add(loginT.getPassword());
+        params.add(loginT.getUsername());
+
+        statusCode = DBUtil.executeUpdate(sql,params);
+
+        return statusCode;
     }
 
     @Override
@@ -85,7 +95,7 @@ public class LoginDAOImpl implements LoginDAO {
                 loginT.setUsername(listDB.get(i).get("username").toString());
                 loginT.setPassword(listDB.get(i).get("password").toString());
                 loginT.setRole(Integer.parseInt(listDB.get(i).get("role").toString()));
-                loginT.setSlamp((Date) listDB.get(i).get("slamp"));
+                loginT.setSlamp(SkyTimeUtil.returnNowTime());
             } catch (NumberFormatException e) {
                 System.out.println("数据类型转换错误");
                 e.printStackTrace();

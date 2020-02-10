@@ -6,10 +6,7 @@ import com.yhtos.talent.dao.UserDAO;
 import com.yhtos.talent.util.DBUtil;
 import com.yhtos.talent.util.SkyTimeUtil;
 
-import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -161,6 +158,12 @@ public class UsersInfoDAOImpl implements UserDAO<UsersInfoT> {
     }
 
 
+    /**
+     * 保存图片
+     * @param map
+     * @param username
+     * @return
+     */
     public int imgSave(Map map,String username){
         int statusCode = 0;//状态码
 
@@ -196,6 +199,21 @@ public class UsersInfoDAOImpl implements UserDAO<UsersInfoT> {
 
     @Override
     public UsersInfoT findByUsername(String username) {
+        UsersInfoT user = null;
+
+        String sql = "select * from tb_userInfo_all where username='"+ username +"'";
+        List<UsersInfoT> list = null;
+        try {
+            list = DBUtil.getModelsWithSqlAndParams(sql,null,new UsersInfoT());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        user = list.get(1);
+
+        return user;
+    }
+
+    public List<UsersInfoT> findUsers() {
         return null;
     }
 

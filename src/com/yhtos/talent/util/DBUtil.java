@@ -1,5 +1,7 @@
 package com.yhtos.talent.util;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -166,4 +168,124 @@ public class DBUtil {
         }
         return list;
     }
+
+
+    /**
+     * @throws Exception
+     *
+     * @Title: getModelsWithSqlAndParams
+     * @Description: TODO(这里用一句话描述这个方法的作用)
+     * @param sql
+     * @param param
+     *            设定文件
+     * @return void 返回类型
+     * @throws
+     */
+    public static <T> List<T> getModelsWithSqlAndParams(String sql,
+                                                        List<Object> param, T t) throws Exception {
+
+        // 定义一个集合用来存放查询出来的结果集
+        List<T> list = new ArrayList<T>();
+
+        Class<?> C = t.getClass();
+
+        // 执行查询获取结果集
+        ResultSet rs = exequery(sql, param);
+
+        while (rs.next()) {
+            // 通过反射出来的类来实力话一个对象
+            //T obj =(T) C.newInstance();
+            T obj =(T) C.getDeclaredConstructor().newInstance();
+            // 取出来当前对象里的每个属性对应的值
+            //C = C.getSuperclass();
+
+            for (; C != Object.class ; C = C.getSuperclass()) {
+                Field[] fields = C.getDeclaredFields();
+                for (Field f : fields) {
+                    //f.setAccessible(true);
+                    String fname = f.getName();
+                    String ftype = f.getType().getSimpleName();
+                    Object value = null;
+
+                    //判断当前列是否存在，存在的话，再进行下一步
+                    if (!columExist(fname, rs)) continue;
+
+                    if (ftype.toLowerCase().equals("string")) {
+                        value = rs.getString(fname);
+                    } else if (ftype.toLowerCase().equals("int")) {
+                        value = rs.getInt(fname);
+                    } else if (ftype.toLowerCase().equals("double")) {
+                        value = rs.getDouble(fname);
+                    } else if (ftype.toLowerCase().equals("long")) {
+                        value = rs.getLong(fname);
+                    } else if (ftype.toLowerCase().equals("float")) {
+                        value = rs.getFloat(fname);
+                    }
+
+                    // 将去到的值付给obj
+                    //Method[] methods = C.getDeclaredMethods();
+                    Method[] methods = C.getMethods();
+                    for (Method m : methods) {
+                        String mname = m.getName().toLowerCase();
+                        if (mname.equals("set" + fname.toLowerCase())) {
+                            // 执行该 方法
+                            m.invoke(obj, value);
+                        }
+                    }
+                }
+            }
+            list.add(obj);
+        }
+        return list;
+    }
+
+    /**
+     *
+     * @Title: exequery
+     * @Description: TODO(这里用一句话描述这个方法的作用)
+     * @param sql
+     * @param param
+     * @return 设定文件
+     * @return ResultSet 返回类型
+     * @throws
+     */
+    public static ResultSet exequery(String sql, List<Object> param) {
+        // 获取连接
+        conn = DBUtil.getConnection();
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            pstmt = conn.prepareStatement(sql);
+            // 封装参数
+            if (param != null)
+                for (int i = 0; i < param.size(); i++) {
+                    pstmt.setObject(i + 1, param.get(i));
+                }
+            // 执行sql
+            rs = pstmt.executeQuery();
+
+            return rs;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 判断列是否存在
+     */
+    public static boolean columExist(String columName,ResultSet rs){
+
+        boolean flag=false;
+
+        try{
+            if(rs.findColumn(columName)>0){
+                flag=true;
+            }
+        }catch(Exception e){
+            flag=false;
+        }
+        return flag;
+    }
+
 }

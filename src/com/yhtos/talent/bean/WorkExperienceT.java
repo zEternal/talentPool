@@ -1,7 +1,5 @@
 package com.yhtos.talent.bean;
 
-import java.sql.Date;
-
 /**
  * 类名：WorkExperienceT
  * 功能：tb_work_experience 用户工作经历表映射
@@ -11,14 +9,14 @@ import java.sql.Date;
  */
 public class WorkExperienceT extends TableF {
 
-    private Date startDate;     //开始日期
-    private Date endDate;       //结束日期
+    private String startDate;     //开始日期
+    private String endDate;       //结束日期
     private String workUnit;    //工作单位
     private String post;        //岗位
     private String leaving;     //离职原因
     private String witPhone;    //证明人电话
 
-    public WorkExperienceT(String username, Date startDate, Date endDate, String workUnit,
+    public WorkExperienceT(String username, String startDate, String endDate, String workUnit,
                            String post, String leaving, String witPhone) {
         super(username);
         this.startDate = startDate;
@@ -29,8 +27,8 @@ public class WorkExperienceT extends TableF {
         this.witPhone = witPhone;
     }
 
-    public WorkExperienceT(int id, Date slamp, String username, Date startDate,
-                           Date endDate, String workUnit, String post, String leaving,
+    public WorkExperienceT(int id, String slamp, String username, String startDate,
+                           String endDate, String workUnit, String post, String leaving,
                            String witPhone) {
         super(id, slamp, username);
         this.startDate = startDate;
@@ -41,19 +39,19 @@ public class WorkExperienceT extends TableF {
         this.witPhone = witPhone;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 

@@ -12,7 +12,7 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
   </head>
   <body>
-  <form >
+  <form id="kkid">
     名称：<input type="text" id="name"/><br/>
     血量：<input type="text" id="pw"/><br/>
     <input type="button" value="提交" id="sender">

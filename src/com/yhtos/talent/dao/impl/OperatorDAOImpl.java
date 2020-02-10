@@ -13,11 +13,13 @@ public class OperatorDAOImpl implements UserDAO<OperatorT> {
     @Override
     public int save(OperatorT operatorT) {
         int statusCode = 0;//状态码
-        String sql = "insert into tb_userInfo_all values(null,?,?,?,?)";
+        String sql = "insert into tb_operator values(null,?,?,?,?,?,?)";
         List<Object> params=new ArrayList<Object>();
         params.add(operatorT.getUsername());
         params.add(operatorT.getName());
         params.add(operatorT.getPhone());
+        params.add(operatorT.getStatus());
+        params.add(operatorT.getRegion());
         params.add(SkyTimeUtil.returnNowTime());
 
         try {
@@ -41,13 +43,35 @@ public class OperatorDAOImpl implements UserDAO<OperatorT> {
 
     @Override
     public int update(OperatorT operatorT) {
-        return 0;
+        int statusCode = 0;
+
+        String sql = "UPDATE tb_operator SET name=?,phone=?,region=? WHERE username=?";
+        List<Object> params=new ArrayList<Object>();
+        params.add(operatorT.getName());
+        params.add(operatorT.getPhone());
+        params.add(operatorT.getRegion());
+        params.add(operatorT.getUsername());
+        statusCode = DBUtil.executeUpdate(sql,params);
+
+        return statusCode;
     }
 
     @Override
     public OperatorT findByUsername(String username) {
 
         return null;
+    }
+
+    public List<OperatorT> findOpertorByName(String name)  {
+        List<OperatorT> operator = null;
+
+        String sql = "SELECT *,password FROM tb_operator,tb_user WHERE name='"+ name +"' and tb_operator.username=tb_user.username";
+        try {
+            operator = DBUtil.getModelsWithSqlAndParams(sql,null,new OperatorT());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return operator;
     }
 
     @Override

@@ -24,7 +24,7 @@ public class LoginT extends TableF{
         this.role = role;
     }
 
-    public LoginT(int id, Date slamp, String username, String password, int role) {
+    public LoginT(int id, String slamp, String username, String password, int role) {
         super(id, slamp, username);
         this.password = password;
         this.role = role;

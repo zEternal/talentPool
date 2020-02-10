@@ -1,6 +1,5 @@
 package com.yhtos.talent.bean;
 
-import java.sql.Date;
 
 /**
  * 类名：UserInfoT
@@ -62,7 +61,7 @@ public class UserInfoT extends TableF{
         this.other2 = other2;
     }
 
-    public UserInfoT(int id, Date slamp, String username, String name, boolean sex, String idCard,
+    public UserInfoT(int id, String slamp, String username, String name, boolean sex, String idCard,
                      String nation, float height, float weight, String phone, String education,
                      String health, String marital, String typeWork, String addr, String selfEva,
                      String comEva, boolean state, String avatar, String idPositive, String idReverse,
