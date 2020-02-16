@@ -33,12 +33,25 @@ public class OperatorDAOImpl implements UserDAO<OperatorT> {
 
     @Override
     public int remove(String username) {
+        int statusCode = 0;//状态码
+
+        String sql = "DELETE FROM tb_operator WHERE id =  ";
         return 0;
     }
 
     @Override
     public int removeMany(List<String> list) {
-        return 0;
+        int statusCode = 0;//状态码
+        StringBuffer sql = new StringBuffer().append("DELETE FROM tb_operator WHERE 1=1 ");
+        List<Object> params=new ArrayList<Object>();
+        for (String id : list) {
+            sql.append("or id=? ");
+            params.add(Integer.parseInt(id));
+        }
+
+        statusCode = DBUtil.executeUpdate(sql.toString(),params);
+
+        return statusCode;
     }
 
     /**

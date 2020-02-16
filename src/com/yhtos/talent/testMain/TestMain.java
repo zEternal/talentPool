@@ -15,12 +15,11 @@ public class TestMain {
     public static void main(String[] args) {
 
 
-        OperatorDAOImpl op = new OperatorDAOImpl();
-        List<OperatorT> lsit = op.findOpertorByName("sdf");
-        String sd = JSONSerializer.toJSON(lsit).toString();
-        System.out.println(sd);
-        System.out.println(lsit.get(0).getUsername());
-        System.out.println(lsit.get(0).getName());
+        String strs = "1,2,6,7,9,";
+        String[] ids = strs.split(",");
+        for(int i = 0; i < ids.length; i ++){
+            System.out.println(ids[i]);
+        }
     }
 
     public static void show(String userName, String pw,int i){
