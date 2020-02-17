@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(filterName = "LoginFilter")
+@WebFilter(filterName = "LoginFilter", urlPatterns = "/main/*")
 public class LoginFilter implements Filter {
     public void destroy() {
     }
@@ -16,14 +16,14 @@ public class LoginFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) resp;
 
         String uri = request.getRequestURI();
-        if (uri.endsWith("login.html") || uri.endsWith("login")) {
+        if (uri.endsWith("login1")  || uri.endsWith("main")) {
             chain.doFilter(request, response);
             return;
         }
 
         String userName = (String) request.getSession().getAttribute("username");
         if (null == userName) {
-            response.sendRedirect("login.html");
+            response.sendRedirect("main.html");
             return;
         }
 

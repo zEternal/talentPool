@@ -187,12 +187,14 @@ public class DBUtil {
         // 定义一个集合用来存放查询出来的结果集
         List<T> list = new ArrayList<T>();
 
-        Class<?> C = t.getClass();
+        //Class<?> C = t.getClass();
 
         // 执行查询获取结果集
         ResultSet rs = exequery(sql, param);
 
         while (rs.next()) {
+            System.out.println("下一行");
+            Class<?> C = t.getClass();/*原先在上面，只能取一个元组，因为在下面获取父类无法返回*/
             // 通过反射出来的类来实力话一个对象
             //T obj =(T) C.newInstance();
             T obj =(T) C.getDeclaredConstructor().newInstance();
@@ -209,7 +211,6 @@ public class DBUtil {
 
                     //判断当前列是否存在，存在的话，再进行下一步
                     if (!columExist(fname, rs)) continue;
-
                     if (ftype.toLowerCase().equals("string")) {
                         value = rs.getString(fname);
                     } else if (ftype.toLowerCase().equals("int")) {
@@ -234,6 +235,7 @@ public class DBUtil {
                     }
                 }
             }
+            System.out.println("tian111"+obj.toString());
             list.add(obj);
         }
         return list;

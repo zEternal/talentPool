@@ -1,6 +1,6 @@
 package com.yhtos.talent.myservlet;
 
-import com.yhtos.talent.dao.impl.OperatorDAOImpl;
+import com.yhtos.talent.dao.impl.UsersInfoDAOImpl;
 import org.json.JSONObject;
 
 import javax.servlet.ServletException;
@@ -9,15 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * 功能：删除操作员
- */
-@WebServlet(name = "DeleteOperatorServlet", urlPatterns = "/DeleteOperatorServlet")
-public class DeleteOperatorServlet extends HttpServlet {
+@WebServlet(name = "DeleteUserServlet", urlPatterns = "/DeleteUserServlet")
+public class DeleteUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int statusCode = 4;
 
@@ -25,16 +21,10 @@ public class DeleteOperatorServlet extends HttpServlet {
         String[] idS = request.getParameter("id").split(",");
         List<String> list = Arrays.asList(idS);
 
-        int n = new OperatorDAOImpl().removeMany(list);
+        int n = new UsersInfoDAOImpl().removeMany(list);
         if (n > 0) {
             statusCode = 10;
         }
-        /*int[] ids = new int[idS.length];
-        for (int i = 0; i < idS.length; i ++) {
-            ids[i] = Integer.parseInt(idS[i]);
-        }
-*/
-
 
         JSONObject resJson = new JSONObject();
         resJson.put("username",request.getSession().getAttribute("username"));

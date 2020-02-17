@@ -189,7 +189,17 @@ public class UsersInfoDAOImpl implements UserDAO<UsersInfoT> {
 
     @Override
     public int removeMany(List<String> list) {
-        return 0;
+        int statusCode = 0;//状态码
+        StringBuffer sql = new StringBuffer().append("DELETE FROM tb_userInfo_all WHERE 1=1 ");
+        List<Object> params=new ArrayList<Object>();
+        for (String id : list) {
+            sql.append("or id=? ");
+            params.add(Integer.parseInt(id));
+        }
+
+        statusCode = DBUtil.executeUpdate(sql.toString(),params);
+
+        return statusCode;
     }
 
     @Override
@@ -219,17 +229,50 @@ public class UsersInfoDAOImpl implements UserDAO<UsersInfoT> {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        user = list.get(1);
+        user = list.get(0);
 
         return user;
     }
 
-    public List<UsersInfoT> findUsers() {
-        return null;
+    public UsersInfoT findUserById(int id) {
+        UsersInfoT user = null;
+
+        String sql = "select * from tb_userInfo_all where id='"+ id +"'";
+        List<UsersInfoT> list = null;
+        try {
+            list = DBUtil.getModelsWithSqlAndParams(sql,null,new UsersInfoT());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        user = list.get(0);
+
+        return user;
+    }
+
+    public List<UsersInfoT> findUsers(int state) {
+        List<UsersInfoT> list = null;
+
+        String sql = "SELECT * FROM tb_userInfo_all WHERE 1=1 ";
+        /*if (state == 1) {
+            sql = sql + "and state=1 ";
+        }
+        if (state == 0) {
+            sql = sql + "and state=0 ";
+        }*/
+        try {
+            list = DBUtil.getModelsWithSqlAndParams(sql,null,new UsersInfoT());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 
     @Override
     public List<UsersInfoT> findAll() {
-        return null;
+        List<UsersInfoT> list = null;
+
+        String sql = "SELECT * FROM tb_userInfo_all WHERE ";
+
+        return list;
     }
 }

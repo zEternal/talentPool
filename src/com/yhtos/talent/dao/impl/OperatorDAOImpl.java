@@ -89,14 +89,25 @@ public class OperatorDAOImpl implements UserDAO<OperatorT> {
 
     @Override
     public OperatorT findByUsername(String username) {
+        int id = Integer.parseInt(username);
+        List<OperatorT> operator = null;
+        String sql = "SELECT *,password FROM tb_operator,tb_user WHERE tb_operator.id='"+ id +"' and tb_operator.username=tb_user.username";
 
-        return null;
+        try {
+            operator = DBUtil.getModelsWithSqlAndParams(sql,null,new OperatorT());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return operator.get(0);
     }
 
     public List<OperatorT> findOpertorByName(String name)  {
         List<OperatorT> operator = null;
 
         String sql = "SELECT *,password FROM tb_operator,tb_user WHERE name='"+ name +"' and tb_operator.username=tb_user.username";
+        if (name == null || name.equals("")){
+            sql = "SELECT *,password FROM tb_operator,tb_user WHERE tb_operator.username=tb_user.username";
+        }
         try {
             operator = DBUtil.getModelsWithSqlAndParams(sql,null,new OperatorT());
         } catch (Exception e) {
@@ -107,6 +118,15 @@ public class OperatorDAOImpl implements UserDAO<OperatorT> {
 
     @Override
     public List<OperatorT> findAll() {
-        return null;
+
+        List<OperatorT> operator = null;
+
+        String sql = "SELECT *,password FROM tb_operator,tb_user WHERE tb_operator.username=tb_user.username";
+        try {
+            operator = DBUtil.getModelsWithSqlAndParams(sql,null,new OperatorT());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return operator;
     }
 }
